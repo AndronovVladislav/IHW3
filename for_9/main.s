@@ -1,6 +1,8 @@
 	.section .rodata
 	.LC6:
         	.string "%.10lf\n"
+	.write_random:
+		.string "%.30lf\n"
 	.read_mode:
 		.string "r"
 	.write_mode:
@@ -90,7 +92,7 @@ main:
 	call	clock@PLT
 	pxor	%xmm0, %xmm0
 	
-	leaq	.LC6(%rip), %rdi
+	leaq	.write_random(%rip), %rdi
 	
 	subq	%rbx, %rax
 	cvtsi2sd %rax, %xmm0

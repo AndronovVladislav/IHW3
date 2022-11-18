@@ -45,7 +45,7 @@ int main(int argc, char** argv) {
 
         clock_t t0 = clock();
         double result = bisection_solution(eps);
-        printf("%.10lf\n", (double) (clock() - t0) / CLOCKS_PER_SEC);
+        printf("%.30lf\n", (double) (clock() - t0) / CLOCKS_PER_SEC);
 
         fprintf(file_out, "%.10lf\n", result);
     } else {
