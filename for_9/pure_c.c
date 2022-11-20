@@ -47,8 +47,10 @@ int main(int argc, char** argv) {
         if (file_in != NULL) {
             FILE* file_out = fopen(argv[2], "w");
             fscanf(file_in,"%lf", &eps);
-            fprintf(file_out, "%.10lf\n", bisection_solution(eps));
-            fclose(file_in);
+
+	    fprintf(file_out, "%.10lf\n", bisection_solution(eps));
+
+	    fclose(file_in);
             fclose(file_out);
         } else if (strcmp(argv[1], "-r") == 0) {
             eps = random_eps();
