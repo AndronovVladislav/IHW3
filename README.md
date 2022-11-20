@@ -5,6 +5,7 @@
 ## На 6
 ### Опции компиляции
 **1.1 gcc -O0 -fno-asynchronous-unwind-tables -fcf-protection=none pure_c.c -o filename.s -lm**
+
 **1.2 gcc -O0 filename.s -o pure_c.o -lm**
 
 **2.2 gcc main.s funcs.s -lm**
