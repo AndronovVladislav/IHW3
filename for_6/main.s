@@ -13,7 +13,7 @@ main:
 
         leaq    .LC6(%rip), %rdi
         movl    $1, %eax
-        call    printf@PLT
+        call    printf@PLT		# в xmm0 лежит значение, возвращённое bisection_solution, printf его увидит и использует
 
         movl    $0, %eax
         popq    %rbp

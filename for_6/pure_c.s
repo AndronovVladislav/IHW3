@@ -20,7 +20,7 @@ f:
 	movapd	%xmm0, %xmm1		# %xmm1 = pow(x, 2.0) + 1.0 - экспонента
 	movq	%rax, %xmm0		# %xmm0 = 2.0 - база
 	call	pow@PLT
-	movsd	%xmm0, -16(%rbp)
+	movsd	%xmm0, -16(%rbp)	# выгружаем результат в -16(%rbp)
 	
 	movsd	.LC0(%rip), %xmm0	
 	movq	-8(%rbp), %rax
@@ -138,7 +138,7 @@ main:
 	
 	leaq	.LC6(%rip), %rdi
 	movl	$1, %eax
-	call	printf@PLT
+	call	printf@PLT		# в xmm0 лежит значение, возвращённое bisection_solution, printf его увидит и использует
 	
 	movl	$0, %eax
 	popq	%rbp
