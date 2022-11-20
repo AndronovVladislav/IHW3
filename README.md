@@ -4,9 +4,8 @@
 Разработать программу, определяющую корень уравнения $2^{x^2 + 1} + x^2 - 4 = 0$ методом половинного деления с точностью = $0.00001$ в диапазоне $[0; 1]$. Если диапазон некорректен, то подобрать корректный диапазон.
 ## На 6
 ### Опции компиляции
-**1.1. gcc pure_c.c -lm**
-
-**1.2 gcc -S pure_c.c -o pure_c.s -lm**
+**1.1 gcc -O0 -fno-asynchronous-unwind-tables -fcf-protection=none pure_c.c -o filename.s -lm**
+**1.2 gcc -O0 filename.s -o pure_c.o -lm**
 
 **2.2 gcc main.s funcs.s -lm**
 
